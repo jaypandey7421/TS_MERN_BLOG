@@ -1,0 +1,206 @@
+/* src/index.css */
+@import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+@plugin 'tailwind-scrollbar';
+
+/* Add the Flowbite plugin */
+/* @plugin "flowbite/plugin"; */
+
+/* Tell Tailwind to scan Flowbite React for classes */
+@source "../node_modules/flowbite-react/dist/esm/**/*.mjs";
+
+
+
+
+/* Styling for the Editor */
+/* .editor {
+  border: 5px solid #beb0b0;
+  border-radius: 6px;
+} */
+
+.toolbar {
+  display: flex;
+  gap: 6px;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+.toolbar button {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.toolbar button.active {
+  background: #e5e7eb;
+}
+
+.ProseMirror {
+  padding: 12px;
+  min-height: 150px;
+  outline: none;
+}
+
+.tiptap:focus {
+  outline: none;
+  border-color: #646cff;
+  /* Vite's default purple */
+}
+
+.tiptap ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.tiptap ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.tiptap li {
+  display: list-item;
+  /* Ensures the browser treats it as a list */
+}
+
+/* Styling for the Code Block container */
+.tiptap pre {
+  background: #0d0d0d;
+  color: #fff;
+  font-family: 'JetBrainsMono', monospace;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tiptap pre code {
+  color: inherit;
+  padding: 0;
+  background: none;
+  font-size: 0.8rem;
+}
+
+/* Style the links inside the editor */
+.tiptap a {
+  color: #2563eb;
+  /* A nice modern blue */
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.tiptap a:hover {
+  color: #1d4ed8;
+  text-decoration: none;
+  /* Optional: remove underline on hover */
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+.tiptap h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 0.8rem;
+}
+
+.tiptap h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0.6rem;
+}
+
+.tiptap h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.tiptap h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.tiptap blockquote {
+  border-left: 3px solid #cbd5e1;
+  /* Subtle gray line */
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #475569;
+  font-style: italic;
+}
+
+/* ###################### Post Page CSS ############################ */
+
+.post-content p {
+  margin-bottom: 0.5rem;
+}
+
+.post-content h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin: 1.5rem 0;
+}
+
+.post-content h2 {
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  margin: 1.5rem 0;
+}
+
+.post-content a {
+  color: rgb(73, 149, 199);
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
+.dark .post-content a {
+  color: red;
+}
+
+pre {
+  background: #0d1117;
+  color: #c9d1d9;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  line-height: 1.5;
+  margin: 1rem 0;
+}
+
+pre code {
+  font-family: "Fira Code", "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  display: block;
+  white-space: pre;
+}
+
+/* Remove inline code styles inside pre */
+pre code {
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+/* Optional: Scrollbar styling */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
