@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: mern_api
+    ports:
+      # Maps local port 8000 to the container's port 8000
+      - "8000:8000"
+    # Pass environment variables from the api/.env file
+    env_file:
+      - ./api/.env
+    restart: unless-stopped
+    networks:
+      - mern_network
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: mern_client
+    ports:
+      # Maps local port 80 to the container's port 80
+      - "80:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - mern_network
+
+networks:
+  mern_network:
+    driver: bridge
