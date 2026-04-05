@@ -5,9 +5,6 @@ export default function Hero() {
         <div className="relative shadow-sm ">
 
             <section className="relative bg-gray-900">
-                {/* <div className="absolute inset-0">
-                    <div className="absolute inset-y-0 left-0 w-1/2 bg-white"></div>
-                </div> */}
 
                 <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-2 min-h-[80vh] lg:min-h-[90vh]">
                     <div className="flex items-center px-4 pb-16 bg-white pt-28 sm:px-6 lg:px-8 lg:pb-24 xl:pr-12">

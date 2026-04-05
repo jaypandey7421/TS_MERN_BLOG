@@ -32,7 +32,7 @@ export default function CommentSection({ postId }: { postId: string | undefined 
             return;
         }
         try {
-            const res = await fetch('/api/comment/create', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/comment/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ export default function CommentSection({ postId }: { postId: string | undefined 
     useEffect(() => {
         const getComments = async () => {
             try {
-                const res = await fetch(`/api/comment/getPostComments/${postId}`);
+                const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/comment/getPostComments/${postId}`);
                 if (res.ok) {
                     const data = await res.json();
                     setComments(data);
@@ -75,7 +75,7 @@ export default function CommentSection({ postId }: { postId: string | undefined 
                 navigate('/signin');
                 return;
             }
-            const res = await fetch(`/api/comment/likeComment/${commentId}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/comment/likeComment/${commentId}`, {
                 method: 'PUT',
             });
             if (res.ok) {

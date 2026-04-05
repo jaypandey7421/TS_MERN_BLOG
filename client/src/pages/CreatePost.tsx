@@ -50,7 +50,7 @@ export default function CreatePost() {
         e.preventDefault();
 
         try {
-            const res = await fetch('/api/post/create', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/post/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

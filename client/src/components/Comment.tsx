@@ -44,7 +44,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }: CommentPr
         const getUser = async () => {
             try {
                 // fetch user details like profile picture and username
-                const res = await fetch(`/api/user/${comment.userId}`);
+                const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/user/${comment.userId}`);
                 const data = await res.json();
                 if (res.ok) {
                     setUser(data);
@@ -63,7 +63,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }: CommentPr
 
     const handleSave = async () => {
         try {
-            const res = await fetch(`/api/comment/editComment/${comment._id}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/comment/editComment/${comment._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

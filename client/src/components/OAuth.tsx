@@ -17,7 +17,7 @@ export default function OAuth() {
 
         try {
             const resultsFromGoogle = await signInWithPopup(auth, provider);
-            const res = await fetch('/api/auth/google', {
+            const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/google`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -40,7 +40,7 @@ export default function OAuth() {
 
     return (
         <Button color='purple' onClick={handleGoogleClick} outline >
-            <AiFillGoogleCircle className='w-6 h-6 mr-2'/>
+            <AiFillGoogleCircle className='w-6 h-6 mr-2' />
             Continue with Google
         </Button>
     )
