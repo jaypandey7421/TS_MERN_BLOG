@@ -1,6 +1,0 @@
-node_modules
-.env
-dist
-Dockerfile
-.dockerignore
-npm-debug.log
