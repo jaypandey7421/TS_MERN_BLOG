@@ -20,7 +20,7 @@ interface Post {
 export default function PostPage() {
     const { postSlug } = useParams();
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<boolean>(false);
+    const [, setError] = useState<boolean>(false);
     const [post, setPost] = useState<Post | null>(null);
     const [recentPosts, setRecentPosts] = useState<Post[] | null>(null);
 
@@ -42,6 +42,7 @@ export default function PostPage() {
                 }
             } catch (err: any) {
                 setError(true);
+
                 setLoading(false);
             }
         };
