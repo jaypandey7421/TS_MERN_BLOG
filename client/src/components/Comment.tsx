@@ -65,6 +65,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }: CommentPr
         try {
             const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/comment/editComment/${comment._id}`, {
                 method: 'PUT',
+                credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json'
                 },
