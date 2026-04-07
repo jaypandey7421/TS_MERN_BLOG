@@ -12,13 +12,15 @@ import commentRoutes from './routes/comment.routes.js'
 dotenv.config();
 
 const app = express();
-const PORT = 8000 || process.env.PORT;
-app.use(express.json());
-app.use(cookieParser());
 app.use(cors({
     origin: process.env.CLIENT_URL,
     credentials: true,
 }));
+
+const PORT = 8000 || process.env.PORT;
+app.use(express.json());
+app.use(cookieParser());
+
 app.use(helmet({
     crossOriginResourcePolicy: false,
 }));
