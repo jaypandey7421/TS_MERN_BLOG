@@ -40,7 +40,7 @@ export default function PostPage() {
                     setLoading(false);
                     setError(false);
                 }
-            } catch (error) {
+            } catch (err: any) {
                 setError(true);
                 setLoading(false);
             }
