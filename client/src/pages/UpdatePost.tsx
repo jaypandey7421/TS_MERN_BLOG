@@ -93,6 +93,7 @@ export default function CreatePost() {
         try {
             const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/post/updatepost/${formData._id}/${currentUser._id}`, {
                 method: 'PUT',
+                credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json',
                 },

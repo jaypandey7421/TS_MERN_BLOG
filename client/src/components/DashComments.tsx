@@ -62,7 +62,10 @@ export default function DashComments() {
         const startIndex = comments.length;
         try {
             const res = await fetch(
-                `${import.meta.env.VITE_API_BASE_URL}/comment/getcomments?startIndex=${startIndex}`
+                `${import.meta.env.VITE_API_BASE_URL}/comment/getcomments?startIndex=${startIndex}`,
+                {
+                    credentials: 'include',
+                }
             );
             const data = await res.json();
             if (res.ok) {
@@ -83,6 +86,7 @@ export default function DashComments() {
                 `${import.meta.env.VITE_API_BASE_URL}/comment/deleteComment/${commentIdToDelete}`,
                 {
                     method: 'DELETE',
+                    credentials: 'include',
                 }
             );
             const data = await res.json();

@@ -62,6 +62,7 @@ export default function DashPosts() {
                 `${import.meta.env.VITE_API_BASE_URL}/post/deletepost/${postIdToDelete}/${currentUser._id}`,
                 {
                     method: 'DELETE',
+                    credentials: 'include',
                 }
             );
             const data = await res.json();
@@ -81,7 +82,10 @@ export default function DashPosts() {
         const startIndex = userPosts.length;
         try {
             const res = await fetch(
-                `${import.meta.env.VITE_API_BASE_URL}/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`
+                `${import.meta.env.VITE_API_BASE_URL}/post/getposts?userId=${currentUser._id}&startIndex=${startIndex}`,
+                {
+                    credentials: 'include',
+                }
             );
             const data = await res.json();
             if (res.ok) {

@@ -94,7 +94,9 @@ export default function Search() {
         const urlParams = new URLSearchParams(location.search);
         urlParams.set('startIndex', startIndex.toString());
         const searchQuery = urlParams.toString();
-        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/post/getposts?${searchQuery}`);
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/post/getposts?${searchQuery}`, {
+            credentials: 'include',
+        });
         if (!res.ok) {
             return;
         }

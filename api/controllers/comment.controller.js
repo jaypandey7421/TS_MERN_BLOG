@@ -70,7 +70,7 @@ export const editComment = async (req, res, next) => {
             {
                 content: req.body.content,
             },
-            { new: true }
+            { returnDocument: 'after' }
         );
         res.status(200).json(editedComment)
     } catch (error) {
